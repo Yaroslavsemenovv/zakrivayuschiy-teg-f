@@ -1,1 +1,48 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+
+--main-font:InterVariable;
+--second-font:PressStart2P;
+--font-header-weight:400;
+--font-card-h:710;
+--font-card-text:410;
+--bg-color:#FFFFFF;
+--bg-color-card:#FFFFFF;
+--main-text-color:#000000;
+--card-text-font-size:18px;
+--special-font-size:14px;
+--animation-fill-color:#FF0000;
+--contour-color:#000000;
+
+
+ --page-gradient: 
+    /* 1. Полоски слева направо (вертикальные линии) */
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+
+    /* 2. Полоски сверху вниз (горизонтальные линии) */
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+
+    /* 3. Плавный переход от светлого к тёмному */
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+
+   --width:clamp(375px, 50vw, 700px);
+ 
+
+} 
