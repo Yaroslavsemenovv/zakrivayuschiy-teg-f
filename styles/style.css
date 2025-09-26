@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family:var(--main-font), sans-serif;
-  font-variation-settings:"wght" var(--font-card-text) var(--font-card-h);
+  font-variation-settings:"wght" var(--font-card-text);
   background-image: var(--page-gradient);
   background-size: cover;        /* растянуть на всю страницу */
   background-attachment: fixed;  /* фон фиксируется при прокрутке */
@@ -36,9 +36,10 @@
   justify-content:center;
   align-items:center;
   width: var(--width);
-  height:327px;
+  padding:122px 16px 122px 16px;
   background-color: var(--bg-color-card);
   border:2px solid var(--main-text-color);
+  text-transform:uppercase;
 }
 
 .header__title {
@@ -59,8 +60,8 @@ main {
   display:grid;
   justify-content:center;
   gap:51px;
-  padding-top:100px;
-  padding-bottom:100px;
+  margin-top:100px;
+  margin-bottom:100px;
 }
 
 .card {
@@ -74,6 +75,7 @@ main {
 .card__title {
   display:flex;
   padding:4px 10px 4px 10px;
+  font-variation-settings:"wght" var(--font-card-h);
   font-size:var(--card-text-font-size);
   color:var(--main-text-color);
 }
@@ -87,16 +89,16 @@ main {
 .card__photo {
   position:relative;
   display: inline-block;
+  border:2px solid var(--main-text-color);
 }
 
 .card__special_paragraph {
   display:flex;
   justify-content:right;
   position:absolute;    
-  width: 100%;
-  padding-top:30px;
-  padding-left:25px;       
-  font-weight:var(--font-header-weight);
+  padding-top:25px;
+  padding-left:15px;       
+  font-variation-settings:"wght" var(--font-header-weight);
   font-size:var(--special-font-size);
   font-family:var(--second-font);
   -webkit-text-stroke:1px solid var(--bg-color);
@@ -109,11 +111,12 @@ main {
   color:var(--main-text-color);
   mix-blend-mode: hard-light;
   right:25px;
+  z-index:1;
 }
 
 @supports (-webkit-text-stroke: 1px var(--bg-color)) {
 
-  .title {
+  .card__special_paragraph {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--bg-color);
   }
@@ -123,7 +126,7 @@ main {
 
 .article__wrapper {
   display:grid;
-  font-weight:var(--font-card-text);
+  font-variation-settings:"wght" var(--font-card-text);
   font-size:var(--card-text-font-size);
   padding:25px 25px 25px 25px;
   gap:25px;
@@ -137,17 +140,17 @@ main {
   padding-right:25px;
 }
 
-
-.button {
+.card__like-button {
   width:130px;
   height:38px;
   font-family:var(--second-font);
   border:2px solid var(--main-text-color);
+  background-color:transparent;
 }
 
 .button__text {
   font-size:var(--special-font-size);
-  font-weight:var(--font-header-weight);
+  font-variation-settings:"wght" var(--font-header-weight);
   mix-blend-mode:difference;
   color:white;
 }
@@ -158,7 +161,7 @@ main {
   justify-content:center;
   align-items:center;
   font-size:var(--special-font-size);
-  font-weight:var(--font-header-weight);
+  font-variation-settings:"wght" var(--font-header-weight);
   font-family:var(--second-font);
   width:306px;
   padding:0;
@@ -177,25 +180,24 @@ main {
 
  .dialog {
     display: none; 
-    border: 3px solid #000;
-    background: #fff;
-    width:341px;
-    max-height:191px;
-    padding-top:30px;
-    padding-bottom:30px;
+    border: 2px solid var(--main-text-color);
+    background:var(--bg-color);
+    max-width:341px;
+    width:100%;
+    padding:30px 0px 30px 0px;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap:30px;
   }
 
   .dialog[open] {
     position:fixed;
     display: flex;         
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    overflow: hidden;
   }
 
   .dialog[open]::backdrop {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
   }
 
   .dialog-content {
@@ -206,33 +208,30 @@ main {
 
   .dialog-paragraph {
     font-size:var(--special-font-size);
-    font-weight:var(--font-header-weight);
+    font-variation-settings:"wght" var(--font-header-weight);
     font-family:var(--second-font);
     text-transform:uppercase;
+    width:234px;
     line-height:1.5;
-    max-width:234px;
-    width:100%;
   }
 
-  .ok-btn {
+  .dialog-btn {
     border: 2px solid var(--main-text-color);
     font-size:var(--special-font-size);
-    font-weight:var(--font-header-weight);
+    font-variation-settings:"wght" var(--font-header-weight);
     font-family:var(--second-font);
     cursor: pointer;
-    margin-top:30px;
+    text-transform:uppercase;
+    padding:0;
     width:261px;
     height:38px;
   }
 
-  .ok-btn-text {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-  }
+  /* .dialog_form {
+    padding-top:30px;
+  } */
 
-
-.filter-first {
+.filter-truck-violet-grey {
   filter: 
     brightness(0.9)      
     contrast(1.15)       
@@ -242,7 +241,7 @@ main {
 
 }
 
-.filter-second {
+.filter-truck-pink-grey {
   filter: 
     brightness(1.1)      
     contrast(1.6)        
@@ -253,7 +252,7 @@ main {
 
 }
 
-.filter-third {
+.filter-truck-violet-white {
   filter: 
     brightness(0.95)    
     contrast(1.25)     
@@ -263,7 +262,7 @@ main {
 
 }
 
-.filter-fourth {
+.filter-truck-orange-green {
   filter:
    brightness(1.05) 
    contrast(1.2)      
@@ -274,7 +273,7 @@ main {
 
 }
 
-.filter-fifth {
+.filter-truck-brown-white {
    filter: 
     brightness(1.05)  
     contrast(1.3)        
@@ -284,12 +283,12 @@ main {
 
 }
 
-.filter-sixth {
+.filter-truck-red-blue {
   filter:blur(5px);
 
 }
 
-.filter-seventh {
+.filter-truck-strawberry {
   filter: 
     brightness(0.95)    
     contrast(1.15)      
@@ -305,14 +304,25 @@ main {
 
     main {
       gap:47px;
+      margin-top:96px;
     }
 
     .card {
       max-width:700px;
     }
 
+    .dialog {
+      padding:30px 0px 30px 0px;
+      max-width:353px;
+      width:100%;
+    }
+
+    .dialog-btn {
+      width:293px;
+    }
+
     .header__info {
-      height:368px;
+      padding:130px 122.5px 130px 122.5px;
     }
 
     .save-btn {
@@ -346,6 +356,7 @@ main {
   justify-content:center;
   align-items:center;
   border:2px solid transparent;
+  background-color:transparent;
   width:39px;
   height:36px;
   padding:0;
@@ -375,6 +386,7 @@ main {
 }
 
 .discet {
+  flex-shrink: 0;
   mix-blend-mode:difference;
   color:white;
 }
@@ -411,11 +423,6 @@ main {
   transition:0.3s linear 0.05s;
 }
 
-.heart:active .contour {
-  fill:var(--contour-color);
-  transition:0.3s linear 0.06s;
-}
-
 .like-icon.is-liked .contour {
   fill:var(--animation-fill-color);
 }
@@ -433,7 +440,7 @@ main {
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparkles 0.3s ease-in 0.3s;
+  animation: sparks-opacity  0.3s ease-in 0.3s;
 }
 
 .like-icon {

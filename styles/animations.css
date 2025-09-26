@@ -17,15 +17,17 @@
 
   to {
     transform:scale(1.25);
+    transform-origin:center;
   }
 }
 
-@keyframes sparkles {
+@keyframes sparks-opacity {
   from {
     opacity:0%;
   }
 
   to {
     opacity:100%;
+    transform-origin:center;
   }
 }
