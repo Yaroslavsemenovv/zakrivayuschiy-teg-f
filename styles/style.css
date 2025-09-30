@@ -98,7 +98,7 @@ main {
   right:25px;
   z-index:1;
   display:flex;
-  justify-content:right;    
+  justify-content:right;
   padding-top:25px;
   padding-left:15px;
   opacity:50%;
@@ -146,6 +146,8 @@ main {
   font-family:var(--second-font);
   background-color:var(--bg-color);
   font-variation-settings:"wght" var(--font-header-weight);
+  position:relative;
+  overflow:hidden;
 }
 
 .card__like-button {
@@ -351,11 +353,6 @@ main {
       height:21px;
     }
 
-}
-
-.button {
-  position:relative;
-  overflow:hidden;
 }
 
 .button:focus {
